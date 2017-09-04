@@ -26,7 +26,7 @@ At time all libraries were installed, we will focus on the definition of the gul
 
 Staring with the conversion task, we have to define the following task inside the gulpfile.js:
 
-```json
+```
 gulp.task('html', ['clean:html'], function() {
  return gulp.src('src/index.adoc')
   .pipe(isDist ? through() : plumber())
@@ -44,13 +44,13 @@ gulp.task('html', ['clean:html'], function() {
 
 Finally, we have to replace the following task: 
 
-```json
+```
 gulp.watch('src/**/*.jade', ['html']);
 ```
 
 with
 
-```json
+```
 gulp.watch('src/**/*.adoc', ['html']);
 ```
 
