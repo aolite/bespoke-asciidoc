@@ -60,7 +60,7 @@ Replace:
 
 [source,javascript]
 ----
- gulp.watch('src/**/*.pug', ['html']);
+ gulp.watch('src/**/*.jade', ['html']);
 ----
 
 By: 
