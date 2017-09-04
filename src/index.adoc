@@ -4,7 +4,72 @@ Aitor Corchero
 :hide-uri-scheme:
 
 [#install]
+[backdrop-role="installation"]
 == Adoc Installation in Bespoke
+
+[backdrop-role="installation"]
+== Add dependencies to package.json
+[source,json]
+----
+"gulp-chmod": "^1.3.0",
+"gulp-exec": "^2.1.2",
+----
+
+[backdrop-role="installation"]
+== Install dependencies in the project (shell)
+[source,shell]
+----
+npm i
+----
+
+[backdrop-role="installation"]
+== Prepare tasks in the gulpfile.js 
+- Define the variables to use
+[source,javascript]
+----
+chmod = require('gulp-chmod'),
+exec = require('gulp-exec'),
+----
+
+[backdrop-role="installation"]
+== Prepare tasks in the gulpfile.js 
+Define the task in charge of converting adoc to html
+
+[source,javascript]
+----
+gulp.task('html', ['clean:html'], function() {
+ return gulp.src('src/index.adoc')
+  .pipe(isDist ? through() : plumber())
+  .pipe(exec('bundle exec asciidoctor-bespoke 
+  -D public -T src/templates -o - src/index.adoc', 
+  { pipeStdout: true }))
+  .pipe(exec.reporter({ stdout: false }))
+  .pipe(rename('index.html'))
+  .pipe(gulp.dest('dist'))
+  .pipe(chmod(644))
+  .pipe(gulp.dest('public'))
+  .pipe(connect.reload());
+});
+----
+
+[backdrop-role="installation"]
+== Prepare tasks in the gulpfile.js 
+Define the whach function
+
+Replace: 
+
+[source,javascript]
+----
+ gulp.watch('src/**/*.pug', ['html']);
+----
+
+By: 
+
+[source,javascript]
+----
+ gulp.watch('src/**/*.adoc', ['html']);
+----
+
 
 == ¿What can We do with bespoke?
 
