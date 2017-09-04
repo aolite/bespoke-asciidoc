@@ -1,0 +1,62 @@
+= Using Adoc in Bespoke
+Aitor Corchero
+:organization: ; Eurecat Technology Centre
+:hide-uri-scheme:
+
+[#install]
+== Adoc Installation in Bespoke
+
+== ¿What can We do with bespoke?
+
+== Enable key interaction
+
+Powered by https://github.com/markdalgleish/bespoke-keys
+
+== Touch Interaction 
+
+Powered by https://github.com/bespokejs/bespoke-touch
+
+== Bullet List
+bullet Powered by https://github.com/markdalgleish/bespoke-bullets">bespoke-bullets
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+== Responsive Slides
+Powered by https://github.com/markdalgleish/bespoke-scale
+
+== Syntax Highlighting
+Powered by Lea Verou's https://github.com/LeaVerou/prism
+
+[source,javascript]
+----
+code.language-javascript. bespoke.from('article', [
+  classes(),
+  keys(),
+  touch(),
+  bullets('li, .bullet')
+]);
+----
+
+[backdrop-role="emphatic"]
+== Emphatic Slide 
+Powered by https://github.com/markdalgleish/bespoke-backdrop
+
+== Playing with tables
+
+[cols="40,60", options="header"] 
+|===
+|Header 1
+|Header 2
+
+| Row 1
+| Row 2
+
+|===
+
+== Put Hands on the asciidoc
+
+- Edit the asciidoc in src/index.adoc
+- Edit the styles at src/styles/main.styl
+- Enjoy Playing!!!

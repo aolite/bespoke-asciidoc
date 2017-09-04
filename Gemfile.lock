@@ -1,0 +1,28 @@
+GIT
+  remote: git://github.com/asciidoctor/asciidoctor-bespoke.git
+  revision: 4a28a79d5c0dfca38091308d4eef1f8e6ff117c5
+  specs:
+    asciidoctor-bespoke (1.0.0.dev)
+      asciidoctor (>= 1.5.0)
+      slim (~> 3.0.6)
+      thread_safe (~> 0.3.5)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    asciidoctor (1.5.6.1)
+    slim (3.0.8)
+      temple (>= 0.7.6, < 0.9)
+      tilt (>= 1.3.3, < 2.1)
+    temple (0.8.0)
+    thread_safe (0.3.6)
+    tilt (2.0.8)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  asciidoctor-bespoke!
+
+BUNDLED WITH
+   1.15.1
