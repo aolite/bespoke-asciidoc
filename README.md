@@ -70,3 +70,25 @@ Then, install dependencies and run the preview server:
 $ npm install && bower install
 $ gulp serve
 ```
+
+## Convert presentation into PDF
+
+To covert the presentation into PDF we have used [Decktape](https://github.com/astefanutti/decktape): 
+
+```bash
+$ npm install -g decktape
+$ decktape
+```
+
+Before installing it, we could convert our presentation with the following command: 
+
+```shell
+$ decktape [presentation_url][output]
+```
+
+As an example: 
+
+```shell
+$ decktape http://localhost:8080 bespoke-asciidoc.pdf
+```
+
